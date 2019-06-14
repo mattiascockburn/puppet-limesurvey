@@ -13,18 +13,19 @@ class limesurvey::config (
     file{"${limesurvey::archive_dest}/tmp":
       seltype => 'httpd_sys_rw_content_t',
     }
-    #    ['cache', 'cron', 'dumps', 'graphs', 'lock', 'log', 'pictures', 'plugins', 'rss', 'sessions', 'tmp', 'uploads'].each |String $subdir| {
-    #      file{"${limesurvey::archive_dest}/files/_${subdir}":
-    #        seltype => 'httpd_sys_rw_content_t',
-    #      }
-    #    }
-    if $limesurvey::use_ldap {
       # Needed for LDAP Sync
       selboolean{'httpd_can_connect_ldap':
         value      => 'on',
         persistent => true,
       }
-    }
+      selboolean{'httpd_setrlimit':
+        value      => 'on',
+        persistent => true,
+      }
+      selboolean{'httpd_unified':
+        value      => 'on',
+        persistent => true,
+      }
   }
   if $limesurvey::manage_database {
     mysql::db { $limesurvey::db_name:
