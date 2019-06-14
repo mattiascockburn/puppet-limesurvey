@@ -18,7 +18,7 @@ limesurvey::db_user: 'limesurvey'
 limesurvey::db_password: 'limesurvey'
 limesurvey::php_settings:
   'PHP/max_execution_time': '600'
-  'PHP/memory_limit': '64M'
+  'PHP/memory_limit': '128M'
   'PHP/post_max_size': '32M'
   'PHP/file_uploads': 'on'
   'PHP/register_globals': 'off'
