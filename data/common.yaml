@@ -10,7 +10,7 @@ limesurvey::group: limesurvey
 limesurvey::version: '3.17.5+190604'
 limesurvey::archive_name: "limesurvey-%{lookup('limesurvey::version')}.tgz"
 limesurvey::archive_dest: "%{lookup('limesurvey::basedir')}/limesurvey-%{lookup('limesurvey::version')}"
-limesurvey::sha265sum: '47c89ece9cc153d9da62fb9b22ab9bc1227d188f2d810a8c4f3720c70983760b'
+limesurvey::sha256sum: '47c89ece9cc153d9da62fb9b22ab9bc1227d188f2d810a8c4f3720c70983760b'
 limesurvey::url: "https://download.limesurvey.org/latest-stable-release/limesurvey%{lookup('limesurvey::version')}.tar.bz2"
 limesurvey::db_name: 'limesurvey'
 limesurvey::db_host: 'localhost'

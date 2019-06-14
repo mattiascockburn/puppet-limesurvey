@@ -45,7 +45,7 @@ class limesurvey::install (
     path            => "/var/tmp/${limesurvey::archive_name}",
     source          => $limesurvey::url,
     checksum        => $limesurvey::sha1sum,
-    checksum_type   => 'sha265',
+    checksum_type   => 'sha256',
     extract_command => 'tar xfj %s --strip-components=1',
     extract         => true,
     extract_path    => $limesurvey::archive_dest,
