@@ -1,1 +1,29 @@
 ---
+limesurvey::manage_database: true
+limesurvey::manage_repos: true
+limesurvey::manage_packages: true
+limesurvey::manage_php: true
+limesurvey::manage_selinux: true
+limesurvey::use_ldap: true
+limesurvey::owner: limesurvey
+limesurvey::group: limesurvey
+limesurvey::version: '3.17.5+190604'
+limesurvey::archive_name: "limesurvey-%{lookup('limesurvey::version')}.tgz"
+limesurvey::archive_dest: "%{lookup('limesurvey::basedir')}/limesurvey-%{lookup('limesurvey::version')}"
+limesurvey::sha265sum: '47c89ece9cc153d9da62fb9b22ab9bc1227d188f2d810a8c4f3720c70983760b'
+limesurvey::url: "https://download.limesurvey.org/latest-stable-release/limesurvey%{lookup('limesurvey::version')}.tar.bz2"
+limesurvey::db_name: 'limesurvey'
+limesurvey::db_host: 'localhost'
+limesurvey::db_user: 'limesurvey'
+limesurvey::db_password: 'limesurvey'
+limesurvey::php_settings:
+  'PHP/max_execution_time': '600'
+  'PHP/memory_limit': '64M'
+  'PHP/post_max_size': '32M'
+  'PHP/file_uploads': 'on'
+  'PHP/register_globals': 'off'
+  'PHP/magic_quotes_sybase': 'off'
+  'PHP/session.auto_start': 'off'
+  'PHP/session.use_trans_sid': '0'
+  'PHP/upload_max_filesize': '32M'
+  'Date/date.timezone': 'UTC'

@@ -1,0 +1,22 @@
+---
+limesurvey::repos::enable_epel: true
+limesurvey::repos::enable_scl: true
+limesurvey::repos::scl_collections:
+  - rh-php71
+limesurvey::php_version: rh-php71
+limesurvey::packages:
+  - "%{lookup('limesurvey::php_version')}-php-gd"
+  - "%{lookup('limesurvey::php_version')}-php-xmlrpc"
+  - "%{lookup('limesurvey::php_version')}-php-ldap"
+  - "%{lookup('limesurvey::php_version')}-php-xml"
+  - "%{lookup('limesurvey::php_version')}-php-pear"
+  - "%{lookup('limesurvey::php_version')}-php-pecl-apcu"
+  - "%{lookup('limesurvey::php_version')}-php-pecl-apcu-devel"
+  - "%{lookup('limesurvey::php_version')}-php-mysqlnd"
+  - "%{lookup('limesurvey::php_version')}-php-opcache"
+  - "%{lookup('limesurvey::php_version')}-php-pdo"
+  - "%{lookup('limesurvey::php_version')}-php-fpm"
+  - "%{lookup('limesurvey::php_version')}-php-mbstring"
+  - "sclo-php71-php-imap"
+  - "sclo-php71-php-mcrypt"
+limesurvey::basedir: '/var/www/limesurvey'
