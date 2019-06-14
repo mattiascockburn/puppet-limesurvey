@@ -17,7 +17,7 @@ class limesurvey(
   String $owner,
   String $group,
   String $basedir,
-  String $sha1sum,
+  String $sha265sum,
   String $archive_name,
   String $archive_dest,
   String $url,
